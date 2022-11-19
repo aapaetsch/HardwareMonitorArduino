@@ -1,0 +1,12 @@
+C:\Users\aapae\source\repos\HardwareMonitorArduino\HardwareMonitorArduino\obj\Debug\HardwareMonitorArduino.csproj.AssemblyReference.cache
+C:\Users\aapae\source\repos\HardwareMonitorArduino\HardwareMonitorArduino\obj\Debug\HardwareMonitorArduino.Properties.Resources.resources
+C:\Users\aapae\source\repos\HardwareMonitorArduino\HardwareMonitorArduino\obj\Debug\HardwareMonitorArduino.csproj.GenerateResource.cache
+C:\Users\aapae\source\repos\HardwareMonitorArduino\HardwareMonitorArduino\obj\Debug\HardwareMonitorArduino.csproj.CoreCompileInputs.cache
+C:\Users\aapae\source\repos\HardwareMonitorArduino\HardwareMonitorArduino\bin\Debug\HardwareMonitorArduino.exe.config
+C:\Users\aapae\source\repos\HardwareMonitorArduino\HardwareMonitorArduino\bin\Debug\HardwareMonitorArduino.exe
+C:\Users\aapae\source\repos\HardwareMonitorArduino\HardwareMonitorArduino\bin\Debug\HardwareMonitorArduino.pdb
+C:\Users\aapae\source\repos\HardwareMonitorArduino\HardwareMonitorArduino\bin\Debug\OpenHardwareMonitorLib.dll
+C:\Users\aapae\source\repos\HardwareMonitorArduino\HardwareMonitorArduino\obj\Debug\Arduino_Controll.Form1.resources
+C:\Users\aapae\source\repos\HardwareMonitorArduino\HardwareMonitorArduino\obj\Debug\HardwareMonitorArduino.csproj.CopyComplete
+C:\Users\aapae\source\repos\HardwareMonitorArduino\HardwareMonitorArduino\obj\Debug\HardwareMonitorArduino.exe
+C:\Users\aapae\source\repos\HardwareMonitorArduino\HardwareMonitorArduino\obj\Debug\HardwareMonitorArduino.pdb
