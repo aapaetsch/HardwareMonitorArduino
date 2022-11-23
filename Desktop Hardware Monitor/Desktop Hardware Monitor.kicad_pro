@@ -55,7 +55,13 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "silk_over_copper|161268850|92002850|fafc80f7-826b-4fb1-b295-feb7ed24e2e5|fc02a893-835c-4827-83e2-8cb7a1d42bda",
+        "silk_over_copper|162675850|66583050|55377f84-3e7f-47bb-9c87-daad1db3eefa|8057fed7-90e7-449a-b8b3-6022758ff0bf",
+        "silk_over_copper|184812650|66583050|55377f84-3e7f-47bb-9c87-daad1db3eefa|5405d299-fab8-4f91-9b38-77ad5e59e5c5",
+        "silk_over_copper|186194250|67990050|d3588399-3981-412f-bb7f-310f67a01e5e|5405d299-fab8-4f91-9b38-77ad5e59e5c5",
+        "silk_over_copper|186194250|92002850|d3588399-3981-412f-bb7f-310f67a01e5e|79d3cd95-9442-4035-98ca-8297cfd4e288"
+      ],
       "meta": {
         "version": 2
       },
@@ -104,9 +110,9 @@
         "allow_microvias": false,
         "max_error": 0.005,
         "min_clearance": 0.127,
-        "min_copper_edge_clearance": 0.0,
+        "min_copper_edge_clearance": 0.19999999999999998,
         "min_hole_clearance": 0.25,
-        "min_hole_to_hole": 0.25,
+        "min_hole_to_hole": 0.5,
         "min_microvia_diameter": 0.19999999999999998,
         "min_microvia_drill": 0.09999999999999999,
         "min_silk_clearance": 0.0,
