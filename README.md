@@ -1,4 +1,4 @@
-<h3>Rough Overview of the project so far:</h3>
+## Rough Overview of the project so far:
 - Desktop Hardware Monitor: Contains the PCB Files for the project.
 - Hardware_Monitor: Contains the arduino code for an arduino microcontroller, currently this is an ATMEGA328p-pu. 
   - This will be used to drive 6X7 segment displays and (hopefully) 2 i2c 128X64px screens.
