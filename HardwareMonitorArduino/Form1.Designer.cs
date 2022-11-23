@@ -41,6 +41,8 @@ namespace Arduino_Controll
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStrip();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
+
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // comboBox1
             // 
@@ -140,6 +142,7 @@ namespace Arduino_Controll
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.timer1.Enabled = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

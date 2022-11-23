@@ -9,17 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
 using OpenHardwareMonitor.Hardware;
+using HardwareMonitorArduino;
 
 namespace Arduino_Controll
 {
     public partial class Form1 : Form
     {
         static string data;
-        Computer c = new Computer()
-        {
-            GPUEnabled = true,
-            CPUEnabled = true
-        };
+        Computer c = new Computer() { };
 
         float value1, value2;
 
@@ -44,10 +41,11 @@ namespace Arduino_Controll
                 string[] ports = SerialPort.GetPortNames();
                 foreach (string port in ports)
                 {
-                    comboBox1.Items.Add(port);
+                    Console.WriteLine(port);
+                    comboBox2.Items.Add(port);
                 }
                 port.BaudRate = 9600;
-
+                var visitor = new LibreHardwareMonitorVisitor();
             }
             catch (Exception ex)
             {
@@ -56,7 +54,7 @@ namespace Arduino_Controll
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -81,6 +79,13 @@ namespace Arduino_Controll
         private void Form1_Load(object sender, EventArgs e)
         {
             c.Open();
+            c.MainboardEnabled = true;
+            c.Close();
+            c.Open();
+            c.MainboardEnabled = true;
+            c.GPUEnabled = true;
+            c.CPUEnabled = true;
+            c.RAMEnabled = true;
         }
 
         private void Form1_Resize(object sender, EventArgs e)
@@ -123,18 +128,20 @@ namespace Arduino_Controll
 
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!port.IsOpen)
                 {
-                    port.PortName = comboBox1.Text;
+                    port.PortName = comboBox2.Text;
                     port.Open();
-                    timer1.Interval = Convert.ToInt32(comboBox2.Text);
+                    timer1.Interval = Convert.ToInt32(comboBox1.Text);
                     timer1.Enabled = true;
                     toolStripStatusLabel1.Text = "Sending data...";
                     label2.Text = "Connected";
+                    Status();
+                    timer1.Start();
                 }
 
             }
@@ -151,44 +158,51 @@ namespace Arduino_Controll
 
         private void Status()
         {
-            foreach (var hardwadre in c.Hardware)
-            {
+            
+            //foreach (var component in c.Hardware)
+            //{
+            //    var x = c.Hardware;
+            //    var y = c.GetReport();
+            //    if (component.HardwareType == HardwareType.GpuNvidia)
+            //    {
+            //        component.Update();
+            //        foreach (var sensor in component.Sensors)
+            //            if (sensor.SensorType == SensorType.Temperature)
+            //            {
 
-                if (hardwadre.HardwareType == HardwareType.GpuNvidia)
-                {
-                    hardwadre.Update();
-                    foreach (var sensor in hardwadre.Sensors)
-                        if (sensor.SensorType == SensorType.Temperature)
-                        {
+            //                value1 = sensor.Value.GetValueOrDefault();
+            //            }
 
-                            value1 = sensor.Value.GetValueOrDefault();
-                        }
+            //    }
+            //    else if (component.HardwareType == HardwareType.GpuAti)
+            //    {
+            //        component.Update();
+            //        value1 = component.Sensors.First(s => s.SensorType == SensorType.Temperature).Value.GetValueOrDefault();
+            //    }
 
-                }
+            //    if (component.HardwareType == HardwareType.CPU)
+            //    {
+            //            component.Update();
+            //        foreach (var sensor in component.Sensors)
+            //            if (sensor.SensorType == SensorType.Temperature)
+            //            {
+            //                value2 = sensor.Value.GetValueOrDefault();
 
-                if (hardwadre.HardwareType == HardwareType.CPU)
-                {
-                    hardwadre.Update();
-                    foreach (var sensor in hardwadre.Sensors)
-                        if (sensor.SensorType == SensorType.Temperature)
-                        {
-                            value2 = sensor.Value.GetValueOrDefault();
+            //            }
 
-                        }
+            //    }
 
-                }
-
-            }
-            try
-            {
-                port.Write(value1 + "*" + value2 + "#");
-            }
-            catch (Exception ex)
-            {
-                timer1.Stop();
-                MessageBox.Show(ex.Message);
-                toolStripStatusLabel1.Text = "Arduino's not responding...";
-            }
+            //}
+            //try
+            //{
+            //    port.Write(value1 + "*" + value2 + "#");
+            //}
+            //catch (Exception ex)
+            //{
+            //    timer1.Stop();
+            //    MessageBox.Show(ex.Message);
+            //    toolStripStatusLabel1.Text = "Arduino's not responding...";
+            //}
         }
 
     }
